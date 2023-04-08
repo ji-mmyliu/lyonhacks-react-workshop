@@ -15,6 +15,17 @@ export function Tasks() {
         setAlertType(type);
     }
 
+    React.useEffect(() => {
+        if (localStorage.getItem("tasks")) {
+            const fetched_tasks = JSON.parse(localStorage.getItem("tasks"));
+            setTasks([...fetched_tasks]);
+        }
+    }, []);
+
+    React.useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
+
     return (
         <>
             <link rel="stylesheet" href="static/style.css" />
