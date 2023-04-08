@@ -45,11 +45,12 @@ export function Tasks() {
                             tasks.map((task, idx) => {
                                 return (
                                     <div className="task" key={idx}>
-                                        <span>{task}</span>
+                                        <span>{`${idx + 1}. ${task}`}</span>
                                         <form onSubmit={(ev) => {
                                             ev.preventDefault();
                                             tasks.splice(idx, 1);
                                             setTasks([...tasks]);
+                                            alert(`Successfully deleted task ${idx + 1}`, "info");
                                         }}>
                                             <button type="submit">Delete</button>
                                         </form>
@@ -66,8 +67,8 @@ export function Tasks() {
                 <span id="footer">Signed in as (username). <a href="/logout">Sign out</a></span>
             </div>
 
-            <Snackbar open={!!message} autoHideDuration={3000} onClose={() => {}}>
-                <Alert onClose={() => {}} severity={alertType} sx={{ width: '100%' }}>
+            <Snackbar open={!!message} autoHideDuration={3000} onClose={() => {setMessage("")}}>
+                <Alert onClose={() => {setMessage("")}} severity={alertType} sx={{ width: '100%' }}>
                     {message}
                 </Alert>
             </Snackbar>
