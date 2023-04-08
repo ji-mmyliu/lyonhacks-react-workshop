@@ -31,3 +31,4 @@ npx run vite
 ## Resources:
 * [React Slideshows](https://drive.google.com/drive/folders/19hbbZeAzow6flaXvbtSh4zS-f-9saBq-?usp=sharing)
 * [MUI Snackbar](https://mui.com/material-ui/react-snackbar/)
+* [Lyonhacks II Web Dev Workshop](https://github.com/ji-mmyliu/lyonhacks-web-dev-workshop)
